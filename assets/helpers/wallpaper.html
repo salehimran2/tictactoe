@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Wallpaper generator</title>
+  </head>
+  <body>
+    <script>
+      const canvas = document.createElement("canvas");
+      canvas.height = canvas.width = 200;
+      document.body.appendChild(canvas);
+      const ctx = canvas.getContext("2d");
+      const size = 5;
+      const gridSize = 10;
+      ctx.fillStyle = "#111";
+      ctx.strokeStyle = "#333";
+      ctx.fillRect(0,0,canvas.width, canvas.height);
+      
+      for (let i = size; i <= canvas.height; i += gridSize) {
+        for (let j = size; j <= canvas.width; j += gridSize) {
+          const rand = Math.random();
+          ctx.save();
+          
+          if (rand > 0.5) {
+            ctx.translate(j-2, i-2);
+            ctx.beginPath();
+            ctx.moveTo(0, 0);
+            ctx.lineTo(size, size);
+            ctx.moveTo(0, size);
+            ctx.lineTo(size, 0);
+            ctx.stroke();
+          }
+          else if (rand > 0.0) {
+            ctx.translate(j, i);
+            ctx.beginPath();
+            ctx.arc(0, 0, size/2, Math.PI * 2, 0);
+            ctx.stroke();
+          }
+          
+          ctx.restore();
+        }
+      }
+    </script>
+  </body>
+</html>

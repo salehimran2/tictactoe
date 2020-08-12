@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700');
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #222;
+  background-image: url('../images/bg.png');
+  background-attachment: fixed;
+  font-family: 'Inconsolata', monospace;
+  font-size: 1.1em;
+  margin: 0;
+  color: #444;
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+}
+
+a, 
+a:link, 
+a:visited, 
+a:hover, 
+a:active {
+  color: #000;
+}
+a:hover {
+  color: #999;
+}
+
+h1, h2, h3, h4, h5, h6 { }
+
+header {
+  color: #fff;
+  margin: 0;
+  text-align: center;
+}
+
+nav, 
+.site-description {
+  color: #fff;
+  text-align: center;
+  padding-bottom: 1em;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+nav ul > li {
+  display: inline-block;
+  padding: 0 0.5em 0 0.5em;
+  margin: 0;
+}
+nav ul > li > a,
+nav ul > li > a:link,
+nav ul > li > a:visited,
+nav ul > li > a:hover,
+nav ul > li > a:active {
+  color: #fff; 
+}
+nav ul > li > a:hover {
+  color: #eee; 
+}
+  
+footer {
+  background-color: #fff;
+}
+footer > p {
+  text-align: center;
+}
+
+#main {
+  min-height: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.content {
+  background-color: #fff;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  flex-grow: 1;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+.profile-item {
+  padding: 1em;
+}
+
+button, 
+input {
+  font-family: 'Inconsolata', monospace;
+}
+
+.entryway-container #register-container, 
+.entryway-container #login-container {
+  padding: 1em;
+}
+.entryway-container {
+  color: #fff;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.entryway-container button,
+.entryway-container input[type=submit] {
+  background: transparent;
+  padding: 0.4em;
+  border: 1px solid #aaa;
+  color: #fff;
+  transition: border 0.1s;
+}
+.entryway-container button:hover, 
+.entryway-container input[type=submit]:hover {
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+.entryway-container input[type=text], 
+.entryway-container input[type=password] {
+  width: 150px;
+  padding: 0.4em;
+}
+
+#ttt-seeks-menu {
+  cursor: default;
+  margin: 0.5em;
+}
+#ttt-new-seek-btn,
+#ttt-refresh-seeks-btn {
+  font-size: 1em;
+}
+button#ttt-new-seek-btn,
+button#ttt-refresh-seeks-btn,
+input[type=submit]#ttt-new-seek-btn {
+  background: transparent;
+  padding: 0.4em;
+  border: 1px solid #777;
+  transition: all 0.1s;
+  outline: 0;
+}
+button#ttt-refresh-seeks-btn:hover,
+button#ttt-new-seek-btn:hover,
+input[type=submit]#ttt-new-seek-btn:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px #000;
+}
+button#ttt-refresh-seeks-btn:active,
+button#ttt-new-seek-btn:active,
+input[type=submit]#ttt-new-seek-btn:active {
+  box-shadow: 0 0 #000;
+}
+
+#entryway-errors,
+.error-container ul {
+  color: #d00;
+  list-style: none;
+  padding: 0;
+}
+
+.no-bullet {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+}
+
+.inline-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.inline-list > li {
+  display: inline-block;
+
+}
+
+.ttt-board-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.ttt-board {
+  padding: 1em;
+  margin: 1em;
+  font-size: 0.8em;
+  border: 1px solid transparent;
+  width: 200px;
+  transition: border 0.3s;
+}
+.ttt-board-toplay {
+  border: 1px solid #555;
+}
+.ttt-board table {
+  margin: 0 auto 0.3em auto;
+  table-layout: fixed;
+  font-size: 1.5em;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'Inconsolata', monospace;
+  border-collapse: collapse;
+}
+.ttt-board table td {
+  cursor: default;
+  height: 50px;
+  width: 50px;
+  border: 1px solid #888;
+  text-align: center;
+}
+.ttt-board table td:first-child {
+  border-left: 0;
+}
+.ttt-board table td:last-child {
+  border-right: 0;
+}
+.ttt-board table tr:first-child td {
+  border-top: 0;
+}
+.ttt-board table tr:last-child td {
+  border-bottom: 0;
+}
+.ttt-board table td.movable {
+  cursor: pointer;
+  font-size: 0;
+  transition: font-size 0.1s;
+}
+.ttt-board table td.movable:hover {
+  font-size: 1em;
+}
+
+#ttt-seeks-container, 
+#admin-users-container {
+  margin: 2em;
+}
+#ttt-seeks-container table, 
+#admin-users-container table {
+  border-collapse: collapse;
+}
+#ttt-seeks-container table td,
+#admin-users-container table td {
+  padding: 1em;
+}
+
+.ttt-seek,
+.admin-user {
+  padding: 1em;
+  transition: 0.2s background;
+}
+.ttt-seek:hover,
+.admin-user:hover {
+  background: #f8f8f8;
+}
+
+@media (max-width: 600px) {
+  header {
+    text-align: left;
+  }
+
+  nav ul > li {
+    display: block;
+    text-align: left;
+  }
+
+  #ttt-seeks-container table th:nth-child(2),
+  #ttt-seeks-container table td:nth-child(2) {
+    display: none;
+  }
+}
